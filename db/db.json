@@ -112,6 +112,28 @@
         "Tomate"
       ],
       "status": "Solicitado"
+    },
+    {
+      "id": 4,
+      "nome": "Ana",
+      "carne": "Frango empanado",
+      "pao": "Parmesão e Orégano",
+      "opcionais": [
+        "Bacon",
+        "Salame",
+        "Cheddar"
+      ],
+      "status": "Solicitado"
+    },
+    {
+      "id": 5,
+      "nome": "João",
+      "carne": "Churrasco",
+      "pao": "Italiano Branco",
+      "opcionais": [
+        "Bacon"
+      ],
+      "status": "Solicitado"
     }
   ]
 }
