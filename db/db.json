@@ -65,17 +65,53 @@
   },
   "status": [
     {
-      "id": 1,
+      "id": "1",
       "tipo": "Solicitado"
     },
     {
-      "id": 2,
+      "id": "2",
       "tipo": "Em produção"
     },
     {
-      "id": 3,
+      "id": "3",
       "tipo": "Finalizado"
     }
   ],
-  "burgers": []
+  "burgers": [
+    {
+      "id": 1,
+      "nome": "Beatriz",
+      "carne": "Frango defumado com cream cheese",
+      "pao": "3 Queijos",
+      "opcionais": [
+        "Cebola roxa",
+        "Cheddar",
+        "Pepino"
+      ],
+      "status": "Solicitado"
+    },
+    {
+      "id": 2,
+      "nome": "Maria",
+      "carne": "Vegetariano",
+      "pao": "Integral",
+      "opcionais": [
+        "Cebola roxa",
+        "Tomate",
+        "Pepino"
+      ],
+      "status": "Solicitado"
+    },
+    {
+      "id": 3,
+      "nome": "Fernanda",
+      "carne": "Churrasco",
+      "pao": "3 Queijos",
+      "opcionais": [
+        "Cebola roxa",
+        "Tomate"
+      ],
+      "status": "Solicitado"
+    }
+  ]
 }
