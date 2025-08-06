@@ -22,9 +22,9 @@
                         </ul>
                     </div>
                     <div>
-                        <select name="status" class="status">
-                            <option value="">Selecione</option>
-                            <option v-for="s in status" :key="s.id" value="s.tipo" :selected="burger.status == s.tipo">{{ s.tipo }}</option>
+                        <select v-model="burger.status" @change="updateBurger(burger.id, burger.status)">
+                            <option disabled value="">Selecione</option>
+                            <option v-for="s in status" :key="s.id" :value="s.tipo" :selected="burger.status == s.tipo">{{ s.tipo }}</option>
                         </select>
                         <button class="delete-btn" @click="confimaDelete(burger.id)">Cancelar</button>
                     </div>
@@ -66,7 +66,11 @@ export default {
                 method: "DELETE"
             });
 
-            alert("Pedido cancelado")
+            alert("Pedido cancelado");
+
+            const res = await req.json();
+
+            console.log(res);
 
             this.getPedidos()
         },
@@ -76,7 +80,22 @@ export default {
             } else {
                 alert("Operação cancelada")
             }
-        }
+        },
+        async updateBurger(id, novoStatus) {
+            const dataJson = JSON.stringify({ status: novoStatus })
+
+            const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: dataJson
+            });
+
+            alert("Status atualizado!");
+
+            const res = await req.json();
+
+            console.log(res);
+        },
     },
     mounted() {
         this.getPedidos();

@@ -100,7 +100,7 @@
         "Tomate",
         "Pepino"
       ],
-      "status": "Solicitado"
+      "status": "Em produção"
     },
     {
       "id": "3",
@@ -111,7 +111,7 @@
         "Cebola roxa",
         "Tomate"
       ],
-      "status": "Solicitado"
+      "status": "Em produção"
     }
   ]
 }
