@@ -2,7 +2,7 @@
     <div id="burger-table">
         <div>
             <div id="burger-table-heading">
-                <div id="order-id">#:</div>
+                <div id="order-id">#</div>
                 <div>Cliente:</div>
                 <div>Pão:</div>
                 <div>Carne:</div>
@@ -26,7 +26,7 @@
                             <option value="">Selecione</option>
                             <option v-for="s in status" :key="s.id" value="s.tipo" :selected="burger.status == s.tipo">{{ s.tipo }}</option>
                         </select>
-                        <button class="delete-btn">Cancelar</button>
+                        <button class="delete-btn" @click="confimaDelete(burger.id)">Cancelar</button>
                     </div>
                 </div>
             </div>
@@ -60,6 +60,22 @@ export default {
 
             this.status = data;
 
+        },
+        async deleteBurger(id) {
+            const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+                method: "DELETE"
+            });
+
+            alert("Pedido cancelado")
+
+            this.getPedidos()
+        },
+        async confimaDelete(id) {
+            if (confirm(`Tem certeza que deseja cancelar o pedido ${id}?`)) {
+                this.deleteBurger(id)
+            } else {
+                alert("Operação cancelada")
+            }
         }
     },
     mounted() {
